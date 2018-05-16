@@ -27,12 +27,14 @@ public class GameLoop {
 		Renderer renderer = new Renderer(shader);
 
 		
-		RawModel rawModel = OBJLoader.loadObjModel("dragon");
+		RawModel rawModel = OBJLoader.loadObjModel("stall");
 		TextureModel textureModel = new TextureModel(TextureLoader.loadTexture("stallTexture"));
 		TexturedModel staticModel = new TexturedModel(rawModel, textureModel);
 		Entity entity = new Entity(staticModel, new Vector3f(0, 0, -50), new Vector3f(0, 0, 0), 1);
 		Camera camera = new Camera();
 		Light lightSource = new Light(new Vector3f(0, 0, -25), new Vector3f(1, 1, 1));
+		staticModel.getTextureModel().setShineDamper(10);
+		staticModel.getTextureModel().setReflectivity(1);
 		
 		while(!Display.isCloseRequested()) {
 			entity.increaseRotation(0, 1, 0);
