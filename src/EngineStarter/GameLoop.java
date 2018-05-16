@@ -14,6 +14,7 @@ import Models.RawModel;
 import Models.TextureModel;
 import Models.TexturedModel;
 import Renderer.DisplayManager;
+import Renderer.MasterRenderer;
 import Shaders.StaticShader;
 
 public class GameLoop {
@@ -22,12 +23,7 @@ public class GameLoop {
 	
 		DisplayManager.startDisplay();
 		
-		
-		StaticShader shader = new StaticShader();
-		Renderer renderer = new Renderer(shader);
-
-		
-		RawModel rawModel = OBJLoader.loadObjModel("stall");
+		RawModel rawModel = OBJLoader.loadObjModel("dragon");
 		TextureModel textureModel = new TextureModel(TextureLoader.loadTexture("stallTexture"));
 		TexturedModel staticModel = new TexturedModel(rawModel, textureModel);
 		Entity entity = new Entity(staticModel, new Vector3f(0, 0, -50), new Vector3f(0, 0, 0), 1);
@@ -36,17 +32,17 @@ public class GameLoop {
 		staticModel.getTextureModel().setShineDamper(10);
 		staticModel.getTextureModel().setReflectivity(1);
 		
+		MasterRenderer renderer = new MasterRenderer();
+		
 		while(!Display.isCloseRequested()) {
 			entity.increaseRotation(0, 1, 0);
 			camera.move();
-			shader.start();
-			shader.loadLightSource(lightSource);
-			shader.loadViewMatrix(camera);
-			renderer.render(entity, shader);
+			renderer.processEntity(entity);
+			renderer.render(lightSource, camera);
 			DisplayManager.updateDisplay();
 		}
 		
-		shader.cleanUp();
+		renderer.cleanUp();
 		VAOLoader.cleanUp();
 		TextureLoader.cleanUp();
 		DisplayManager.stopDisplay();

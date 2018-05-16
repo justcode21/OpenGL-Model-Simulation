@@ -20,7 +20,7 @@ void main(void){
 	
 	// diffuse Lightning
 	float dotProduct = dot(unitSurfaceNormal, unitLightVector);
-	float brightness = max(dotProduct , 0.0);
+	float brightness = max(dotProduct , 0.3);
 	vec3 diffuse = brightness * lightColour;
 	
 	//specular Lightning
