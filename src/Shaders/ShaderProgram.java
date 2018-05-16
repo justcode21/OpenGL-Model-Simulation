@@ -104,8 +104,10 @@ public abstract class ShaderProgram {
 		GL20.glCompileShader(shaderID);
 		if(GL20.glGetShader(shaderID, GL20.GL_COMPILE_STATUS) == GL11.GL_FALSE) {
 			
+			String shaderType = type == GL20.GL_VERTEX_SHADER ? "vertexShader" :
+										"fragmentShader";
 			System.out.println(GL20.glGetProgramInfoLog(shaderID, 500));
-			System.err.println("Could not compile shader");
+			System.err.println("Could not compile shader " + shaderType);
 			System.exit(-1);
 		}
 		

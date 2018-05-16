@@ -19,12 +19,14 @@ public class VAOLoader {
 	private static List<Integer>vbos = new ArrayList<Integer>();
 	
 	
-	public static RawModel loadToVAO(float [] vertices, float [] textures, int [] indices) {
+	public static RawModel loadToVAO(float [] vertices, float [] textures, float [] normals, int [] indices) {
 		
 		int vaoID = createVAO();
 		bindIndicesBuffer(indices);
 		storeDataInVertexArrayAttributes(0, 3, vertices);
 		storeDataInVertexArrayAttributes(1, 2, textures);
+		storeDataInVertexArrayAttributes(2, 3, normals);
+		
 		unbindVAO();
 		return new RawModel(vaoID, indices.length);
 		

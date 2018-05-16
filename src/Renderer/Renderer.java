@@ -39,8 +39,10 @@ public class Renderer {
 		RawModel rawModel = texturedModel.getRawModel();
 		
 		GL30.glBindVertexArray(rawModel.getModelID());
+		
 		GL20.glEnableVertexAttribArray(0);
 		GL20.glEnableVertexAttribArray(1);
+		GL20.glEnableVertexAttribArray(2);
 		
 		Matrix4f transformationMatrix = ToolBox.createTransformationMatrix(entity.getPosition(), 
 				entity.getRotation().getX(), entity.getRotation().getY(),
@@ -52,6 +54,8 @@ public class Renderer {
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, texturedModel.getTextureModel().getModelID());
 		GL11.glDrawElements(GL11.GL_TRIANGLES, rawModel.getVertexCount(), GL11.GL_UNSIGNED_INT, 0);
 		
+
+		GL20.glDisableVertexAttribArray(2);
 		GL20.glDisableVertexAttribArray(1);
 		GL20.glDisableVertexAttribArray(0);
 		GL30.glBindVertexArray(0);

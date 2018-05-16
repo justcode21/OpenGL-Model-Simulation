@@ -108,7 +108,7 @@ public class OBJLoader {
 		for(int i = 0; i < indices.size(); i++)
 			indicesArray[i] = indices.get(i);
 		
-		return VAOLoader.loadToVAO(verticesArray, texturesArray, indicesArray);
+		return VAOLoader.loadToVAO(verticesArray, texturesArray, normalsArray, indicesArray);
 	}
 	
 	private static void processVertex(String [] vertexData, List<Integer>indices, 
