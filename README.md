@@ -1,4 +1,3 @@
-# OpenGL Model Simulation
 
 ## Overview
 The project can load any 3-D model made in Blender or any other 3-D modeling software and also allows you to wrap it in any texture of your choice, it also supports an open world simulation with a 3-D camera system and all lightnig effects(diffuse, specular, ambient) with single or multipe light sources. It has a OOP design with the following packages-
@@ -11,7 +10,7 @@ The project can load any 3-D model made in Blender or any other 3-D modeling sof
 * Camrea
 * ToolBox
 
-### Models
+## Models
 The purpose of the model package is to wrap the object provided by the blender software into VAO which can later be rendered by the the GPU through the Renderer package. It has the following classes-
 ```
 * RawModel : The lowermost level of the wrapper and stores only the VAO Id for the given object.
