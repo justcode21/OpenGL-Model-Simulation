@@ -63,7 +63,7 @@ ToolBox : Stores method to create (transformation, projection, view) Matrix for 
 ```
 
 ## Screenshots
-Here are some of the screenshots of the project
+Here are some of the screenshots of the project with a random stall model made in Blender and the Standford Dragon model. Both of them have a random texture attached to them.
 <img src = "res/ScreenShots/1.png" width = 800>
 <img src = "res/ScreenShots/2.png" width = 800>
 <img src = "res/ScreenShots/3.png" width = 800>
