@@ -61,3 +61,9 @@ Store all the maths classes/function that we will be requireing in our program f
 ```
 ToolBox : Stores method to create (transformation, projection, view) Matrix for our 3-D space and camera.
 ```
+
+## Screenshots
+Here are some of the screenshots of the project
+<img src = "res/ScreenShots/1.png" width = 800>
+<img src = "res/ScreenShots/2.png" width = 800>
+<img src = "res/ScreenShots/3.png" width = 800>
