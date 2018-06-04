@@ -1,6 +1,6 @@
 
 ## Overview
-The project can load any 3-D model made in Blender or any other 3-D modeling software and also allows you to wrap it in any texture of your choice, it also supports an open world simulation with a 3-D camera system and all lightnig effects(diffuse, specular, ambient) with single or multipe light sources. It has a OOP design with the following packages-
+The project can load any 3-D model made in Blender or any other 3-D modeling software and also allows you to wrap it in any texture of your choice, it also supports an open world simulation with a 3-D camera system and all lightnig effects(diffuse, specular, ambient) with single or multipe light sources. It supports all sorts of object dynamics that you can think of, bulit using OOP design principles the aim of this project is to better visualize 3-D models for educational purpose in schools and promote graphics programming. The project is bundled in the following packages-
 
 * Models
 * Entity
